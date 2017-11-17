@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--对于当前的文章的概述-->
+<!--内容-->
+<div style="width: 1240px;">　　我们自己编写了spark代码后;放到集群中一执行，就会出现问题，没有序列化、指定的配置文件不存在、classnotfound等等。这其实很多时候就是因为我们对自己编写的spark代码执行流程的不熟悉导致的，源码阅读可以解决，但源码不是每个人都能看懂或能看进去的，下面我们就来讲一下，我们自己写的spark代码究竟是这么执行的。从执行的过程可分为三个部分来分析main方法，RDD处理方法，DStream处理方法，从执行的JVM虚拟机可以分为两个部分driver端，worker端</div>
+<!--空行-->
+<div style="text-align: right; font-style: italic;">（java学习交流③群：256909960，欢迎加入）</div>
+<div class="day">
+    <!--===============================一级标题=============================-->
+    <div style="background-color: #e65903; border-radius: 5px 5px 5px 5px;"><span style="font-size: 18px;"><strong>一、main方法</strong></span></div>
+    <!--内容-->
+    <div style="width: 1240px;">　　main方法就是在driver端执行的，当然这里是把RDD计算的Action剔除的情况，先看一段代码</div>
+    <div><img src="http://images2017.cnblogs.com/blog/1099612/201709/1099612-20170905155314976-1786729097.png" alt="" /></div>
+    <!-----------------------------------二级标题------------------------------------------------>
+    <div><strong><span style="color: #339966;">1、driver端</span></strong></div>
+    <!-----------------------------------二级标题------------------------------------------------>
+    <div style="width: 1240px;">　　除了rdd算子中的代码其他都是在driver端执行，并且只执行一次</div>
+    <div style="text-align: right; font-style: italic;">（java学习交流③群：256909960，欢迎加入）</div>
+    <!--二级标题-->
+    <div><strong><span style="font-size: 16px; color: #339966;">2、worker端</span></strong></div>
+    <!--内容-->
+    <div style="width: 1240px;">　　DSUtil.dSopt()这里的带就是处理DSTream的，其中有一部分代码是driver一部分是Worker的，这里姑且认为是在worker端</div>
+    <div style="text-align: right; font-style: italic;">（java学习交流③群：256909960，欢迎加入）</div>
+</div>
+
+
+<div class="cnblogs_code">
+    <div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></a></span></div>
+    <pre>import org.springframework.boot.autoconfigure.*;
+import org.springframework.boot.autoconfigure.jdbc.*;
+import org.springframework.context.annotation.*;
+@Configuration
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+public class MyConfiguration {
+}</pre>
+    <div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></a></span></div>
+</div>
+
+
+
+</body>
+</html>

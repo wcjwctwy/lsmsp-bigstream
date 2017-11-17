@@ -1,0 +1,11 @@
+{
+  "streaming": {
+    "driverClassName":"com.mysql.jdbc.Driver",
+    "url":"jdbc:mysql://localhost/ctg",
+    "username":"root",
+    "password":"123456",
+    "maxActive":"30",
+    "maxIdle":"10",
+    "maxWait":"1000"
+  }
+}
