@@ -19,7 +19,7 @@
         <scala-version>2.10.6</scala-version>
         <kafka-version>0.9.0.1</kafka-version>
         <apache-spark-version>1.6.0-cdh5.7.2</apache-spark-version>
-        <netty-version>4.1.7.Final</netty-version>
+        <netty-version>4.1.42.Final</netty-version>
         <mysql-version>5.1.35</mysql-version>
         <solr-version>4.10.3-cdh5.7.2</solr-version>
     </properties>
